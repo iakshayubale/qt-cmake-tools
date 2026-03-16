@@ -74,6 +74,27 @@ cmake .. -G "Visual Studio 17 2022" -DCMAKE_PREFIX_PATH="C:\Qt\6.5.0\msvc2019_64
 cmake .. -G "Ninja" -DCMAKE_PREFIX_PATH="C:\Qt\6.5.0\msvc2019_64"
 ```
 
+#### Windows Subsystem for Linux (WSL)
+```bash
+mkdir build
+cd build
+
+# WSL runs Linux, so use Unix Makefiles or Ninja
+# First install Qt for Linux if not already done:
+# sudo apt-get install qt6-base-dev qt6-tools-dev (Ubuntu/Debian)
+# sudo dnf install qt6-qtbase-devel (Fedora/RHEL)
+
+# If Qt is installed at standard location:
+cmake .. -G "Unix Makefiles"
+
+# Or if Qt is installed at custom location (Windows path converted to WSL):
+# /mnt/c/Qt/6.5.0/gcc_64 corresponds to C:\Qt\6.5.0\gcc_64
+cmake .. -G "Unix Makefiles" -DCMAKE_PREFIX_PATH="/mnt/c/Qt/6.5.0/gcc_64"
+
+# For faster builds with Ninja:
+cmake .. -G "Ninja" -DCMAKE_PREFIX_PATH="/mnt/c/Qt/6.5.0/gcc_64"
+```
+
 #### macOS (Xcode or Unix Makefiles)
 ```bash
 mkdir build
