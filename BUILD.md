@@ -228,6 +228,39 @@ sudo apt install cmake  # Ubuntu/Debian
 sudo dnf install cmake  # Fedora
 ```
 
+### "does not appear to contain CMakeLists.txt" (WSL)
+
+This happens when cmake can't find CMakeLists.txt. Usually a path or directory issue.
+
+**Solution:**
+
+```bash
+# 1. Make sure you cloned/extracted to correct location
+cd /mnt/c/Users/aksha/Downloads/git
+
+# 2. Verify CMakeLists.txt exists
+ls -la CMakeLists.txt
+
+# 3. Remove old build directory (if it exists)
+rm -rf build
+
+# 4. Create fresh build directory
+mkdir -p build
+cd build
+
+# 5. Run cmake from build directory
+# The '..' points to parent directory which contains CMakeLists.txt
+cmake .. -G "Unix Makefiles"
+
+# 6. Build
+cmake --build . -j4
+```
+
+**Key Points:**
+- You MUST be IN the `build` directory when running `cmake ..`
+- The `..` must point to the directory containing `CMakeLists.txt`
+- Never run `cmake` from the source directory itself
+
 ### Compiler errors
 
 Ensure you have a C++17 compatible compiler:
