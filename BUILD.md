@@ -52,11 +52,16 @@ sudo dnf install cmake qt6-qtbase-devel
 ```bash
 # If using git
 git clone https://github.com/iakshayubale/qt-cmake-tools.git
-cd qt-cmake-tools
+cd qt-cmake-tools    # ⚠️ IMPORTANT: Enter the project directory!
 
-# Or just extract the downloaded files
-cd qt-cmake-tools
+# Or if you downloaded as ZIP
+cd /path/to/qt-cmake-tools    # ⚠️ IMPORTANT: Navigate INTO the project folder
 ```
+
+**Key Point:** You must be INSIDE the `qt-cmake-tools` directory where `CMakeLists.txt` exists.
+This is NOT the parent folder - it's the actual project folder.
+
+
 
 ### Step 2: Configure Build
 
@@ -76,6 +81,10 @@ cmake .. -G "Ninja" -DCMAKE_PREFIX_PATH="C:\Qt\6.5.0\msvc2019_64"
 
 #### Windows Subsystem for Linux (WSL)
 ```bash
+# IMPORTANT: Navigate into the qt-cmake-tools project directory
+cd /mnt/c/Users/aksha/Downloads/git/qt-cmake-tools
+
+# Create build directory
 mkdir build
 cd build
 
@@ -230,36 +239,51 @@ sudo dnf install cmake  # Fedora
 
 ### "does not appear to contain CMakeLists.txt" (WSL)
 
-This happens when cmake can't find CMakeLists.txt. Usually a path or directory issue.
+This happens when cmake can't find CMakeLists.txt. The most common cause is being in the wrong directory.
 
 **Solution:**
 
 ```bash
-# 1. Make sure you cloned/extracted to correct location
+# ❌ WRONG - You're in the parent directory
 cd /mnt/c/Users/aksha/Downloads/git
+# CMakeLists.txt is NOT here - it's inside qt-cmake-tools!
 
-# 2. Verify CMakeLists.txt exists
-ls -la CMakeLists.txt
+# ✅ CORRECT - Enter the actual project directory
+cd /mnt/c/Users/aksha/Downloads/git/qt-cmake-tools
 
-# 3. Remove old build directory (if it exists)
+# Verify CMakeLists.txt exists
+ls -la CMakeLists.txt   # Should show the file
+
+# Remove old build
 rm -rf build
 
-# 4. Create fresh build directory
+# Create fresh build directory
 mkdir -p build
 cd build
 
-# 5. Run cmake from build directory
-# The '..' points to parent directory which contains CMakeLists.txt
+# Run cmake from the build directory (note the '..' points to parent = source dir)
 cmake .. -G "Unix Makefiles"
 
-# 6. Build
+# Build
 cmake --build . -j4
 ```
 
 **Key Points:**
-- You MUST be IN the `build` directory when running `cmake ..`
-- The `..` must point to the directory containing `CMakeLists.txt`
-- Never run `cmake` from the source directory itself
+1. **You must be INSIDE `qt-cmake-tools/` directory** - this is where CMakeLists.txt lives
+2. You then create a `build/` subdirectory inside `qt-cmake-tools/`
+3. Run `cmake ..` from the `build/` directory
+4. The `..` points to the parent directory which contains CMakeLists.txt
+
+**Directory Tree:**
+```
+qt-cmake-tools/
+├── CMakeLists.txt          ← The file CMake is looking for
+├── cmake/
+├── examples/
+├── tests/
+└── build/                  ← Create this, and run cmake from here
+    └── (cmake files will be created here)
+```
 
 ### Compiler errors
 
