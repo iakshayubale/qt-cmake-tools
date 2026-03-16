@@ -25,8 +25,8 @@ git commit -m "Initial commit: Qt CMake Tools v1.0.0
 - Add unit tests
 - Add MIT License"
 
-# Set origin (replace with your repository URL)
-git remote add origin https://github.com/yourusername/qt-cmake-tools.git
+# Set origin
+git remote add origin https://github.com/iakshayubale/qt-cmake-tools.git
 
 # Create main branch and push
 git branch -M main
@@ -52,10 +52,8 @@ git config user.email "your.email@example.com"
 
 ## Repository URL
 
-Replace with your actual GitHub repository:
-
 ```bash
-git remote set-url origin https://github.com/yourusername/qt-cmake-tools.git
+git remote set-url origin https://github.com/iakshayubale/qt-cmake-tools.git
 ```
 
 ## Branching Strategy
@@ -144,7 +142,7 @@ git push origin --tags
 ### 2. Set Origin
 
 ```bash
-git remote add origin https://github.com/yourusername/qt-cmake-tools.git
+git remote add origin https://github.com/iakshayubale/qt-cmake-tools.git
 git branch -M main
 git push -u origin main
 ```
@@ -299,9 +297,9 @@ git push origin v1.0.0
 Add to your README:
 
 ```markdown
-![GitHub stars](https://img.shields.io/github/stars/yourusername/qt-cmake-tools)
-![GitHub license](https://img.shields.io/github/license/yourusername/qt-cmake-tools)
-![GitHub release](https://img.shields.io/github/v/release/yourusername/qt-cmake-tools)
+![GitHub stars](https://img.shields.io/github/stars/iakshayubale/qt-cmake-tools)
+![GitHub license](https://img.shields.io/github/license/iakshayubale/qt-cmake-tools)
+![GitHub release](https://img.shields.io/github/v/release/iakshayubale/qt-cmake-tools)
 ```
 
 ### Badges
@@ -310,7 +308,7 @@ Add to your README:
 [![CMake](https://img.shields.io/badge/CMake-3.16+-blue)](https://cmake.org/)
 [![Qt](https://img.shields.io/badge/Qt-6.5+-green)](https://qt.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Build Status](https://github.com/yourusername/qt-cmake-tools/workflows/CMake/badge.svg)](https://github.com/yourusername/qt-cmake-tools/actions)
+[![Build Status](https://github.com/iakshayubale/qt-cmake-tools/workflows/CMake/badge.svg)](https://github.com/iakshayubale/qt-cmake-tools/actions)
 ```
 
 ## Support for Repository

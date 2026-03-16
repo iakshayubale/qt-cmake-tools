@@ -106,7 +106,7 @@ void MyFunction()
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/qt-cmake-tools.git
+git clone https://github.com/iakshayubale/qt-cmake-tools.git
 cd qt-cmake-tools
 
 # Create build directory

@@ -223,7 +223,7 @@ qt_add_test(my_tests tests/tst_mytest.cpp)
 ### Step 1: Clone and Explore
 
 ```bash
-git clone https://github.com/yourusername/qt-cmake-tools.git
+git clone https://github.com/iakshayubale/qt-cmake-tools.git
 cd qt-cmake-tools
 ls -la examples/  # See working examples!
 ```

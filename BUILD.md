@@ -51,7 +51,7 @@ sudo dnf install cmake qt6-qtbase-devel
 
 ```bash
 # If using git
-git clone https://github.com/yourusername/qt-cmake-tools.git
+git clone https://github.com/iakshayubale/qt-cmake-tools.git
 cd qt-cmake-tools
 
 # Or just extract the downloaded files
