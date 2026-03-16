@@ -90,8 +90,10 @@ cd build
 
 # WSL runs Linux, so use Unix Makefiles or Ninja
 # First install Qt for Linux if not already done:
-# sudo apt-get install qt6-base-dev qt6-tools-dev (Ubuntu/Debian)
-# sudo dnf install qt6-qtbase-devel (Fedora/RHEL)
+# Ubuntu/Debian - includes QML support for qml-app example:
+# sudo apt-get install qt6-base-dev qt6-declarative-dev qt6-tools-dev
+# Fedora/RHEL:
+# sudo dnf install qt6-qtbase-devel qt6-declarative-devel
 
 # If Qt is installed at standard location:
 cmake .. -G "Unix Makefiles"
