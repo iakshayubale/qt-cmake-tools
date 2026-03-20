@@ -8,7 +8,6 @@
 | **Version** | 1.0.0 |
 | **License** | MIT |
 | **Year Started** | 2026 |
-| **Status** | Production Ready |
 | **Primary Language** | CMake |
 | **Supported Qt Versions** | Qt 5.15+, Qt 6.2+ |
 | **Minimum CMake Version** | 3.16 |

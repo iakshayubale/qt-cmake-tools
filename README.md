@@ -410,14 +410,6 @@ For more solutions, see [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 ---
 
-## 🎉 Success Stories
-
-> "Qt CMake Tools cut our project setup time from 2 hours to 5 minutes. We can now focus on features instead of configuration!" — *Developer at TechCorp Inc.*
-
-> "Finally, a way to manage QML files without manually listing them all. It's a game-changer!" — *Mobile App Developer*
-
----
-
 ## Roadmap
 
 - [ ] VS Code extension for easier project creation
